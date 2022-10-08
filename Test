@@ -17,7 +17,7 @@ local Visual = Window:NewTab("Visual")
 local VisualSection = Visual:NewSection("Player Sight")
 local Credits = Window:NewTab("Credits")
 local CreditsSection = Credits:NewSection("Contributors:")
-
+--Local 
 Section:NewSlider("Walkspeed", "Changes how fast the player walks.", 300, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
@@ -25,7 +25,7 @@ end)
 Section:NewSlider("JumpPower", "Changes the height of your jumps.", 600, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
-
+--Executables
 LoadstringsSection:NewButton("Infinite Yield", "Executes Infinite Yield.", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
@@ -38,6 +38,11 @@ LoadstringsSection:NewButton("Remote Spy", "Executes Remote Spy", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/DJZa4uKy", true))()
 end)
 
+LoadstringsSection:NewButton("Dex V2", "Executes Dex V2", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/Ht4zRXj8'),true))()
+end)   
+
+--Visuals
 VisualSection:NewToggle("FullBrightness", "This will make your game client go to full brightness.", function(state)
     local bright = game.Lighting.Brightness
     
@@ -82,6 +87,10 @@ VisualSection:NewToggle("ESP", "You will see players through walls.", function(s
         
     end
 end)
-
+--Credits
 CreditsSection:NewLabel("Scripting: Lordertee/CMB")
 CreditsSection:NewLabel("UI: Kavo-UI-Library")
+    
+    
+    
+    
