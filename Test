@@ -81,7 +81,7 @@ VisualSection:NewToggle("ESP", "You will see players through walls.", function(s
         print("Toggle Off")
        
         state = false
-       
+       esp:Destroy()
 
         
     end
