@@ -15,6 +15,8 @@ local Loadstrings = Window:NewTab("Executables")
 local LoadstringsSection = Loadstrings:NewSection("Loadstrings/Executables")
 local Visual = Window:NewTab("Visual")
 local VisualSection = Visual:NewSection("Player Sight")
+local Credits = Window:NewTab("Credits")
+local CreditsSection = Credits:NewSection("Contributors")
 
 Section:NewSlider("Walkspeed", "Changes how fast the player walks.", 300, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
@@ -80,3 +82,6 @@ VisualSection:NewToggle("ESP", "You will see players through walls.", function(s
         
     end
 end)
+
+CreditsSection:NewLabel("Scripting: Lordertee/CMB")
+CreditsSection:NewLabel("UI: Kavo-UI-Library")
