@@ -60,12 +60,13 @@ VisualSection:NewToggle("ESP", "You will see players through walls.", function(s
     
     
     if state then
+        local esp = Instance.new("Highlight")
         print("Toggle On")
         local players = game.Players:GetPlayers()
         
         for i,v in pairs(players) do
             state = true
-            local esp = Instance.new("Highlight")
+            
          esp.Name = v.Name
          esp.FillTransparency = 0
          esp.FillColor = Color3.new(255, 0, 0)
@@ -85,8 +86,9 @@ VisualSection:NewToggle("ESP", "You will see players through walls.", function(s
        esp.OutlineTransparency = 1
        esp.FillTransparency = 1
 
-        
+    
     end
+
 end)
 
 
