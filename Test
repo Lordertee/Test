@@ -1,0 +1,82 @@
+
+print("Devil Hub Alpha loaded!")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/paygammy/roblox-gpu-saver/release/scripts/GPUSaver.lua"))()
+
+
+
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Devil Hub Alpha", "BloodTheme")
+local Tab = Window:NewTab("LocalPlayer")
+local Section = Tab:NewSection("Walkspeed & Height")
+local Loadstrings = Window:NewTab("Executables")
+local LoadstringsSection = Loadstrings:NewSection("Loadstrings/Executables")
+local Visual = Window:NewTab("Visual")
+local VisualSection = Visual:NewSection("Player Sight")
+
+Section:NewSlider("Walkspeed", "Changes how fast the player walks.", 300, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewSlider("JumpPower", "Changes the height of your jumps.", 600, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+LoadstringsSection:NewButton("Infinite Yield", "Executes Infinite Yield.", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+LoadstringsSection:NewButton("CMD-X", "Executes CMD-X.", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+end)
+
+LoadstringsSection:NewButton("Remote Spy", "Executes Remote Spy", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/DJZa4uKy", true))()
+end)
+
+VisualSection:NewToggle("FullBrightness", "This will make your game client go to full brightness.", function(state)
+    local bright = game.Lighting.Brightness
+    
+    if state then
+        print("Toggle On")
+        game.Lighting.Brightness = 10
+    else
+        print("Toggle Off")
+        game.Lighting.Brightness = 4
+    end
+end)
+
+VisualSection:NewToggle("ESP", "You will see players through walls.", function(state)
+    
+    
+    if state then
+        print("Toggle On")
+        local players = game.Players:GetPlayers()
+        
+        for i,v in pairs(players) do
+            local esp = Instance.new("Highlight")
+         esp.Name = v.Name
+         esp.FillTransparency = 0
+         esp.FillColor = Color3.new(255, 0, 0)
+         esp.OutlineColor = Color3.new(1, 0.333333, 1)
+         esp.OutlineTransparency = 0
+         esp.Parent = v.Character
+        end
+       
+
+       
+    
+    else
+        print("Toggle Off")
+       
+        esp.FillTransparency = 1
+        esp.FillColor = Color3.new(255, 0, 0)
+        esp.OutlineColor = Color3.new(1, 0.333333, 1)
+        esp.OutlineTransparency = 1
+       
+
+        
+    end
+end)
