@@ -82,6 +82,8 @@ VisualSection:NewToggle("ESP", "You will see players through walls.", function(s
        
         state = false
        esp:Destroy()
+       esp.OutlineTransparency = 1
+       esp.FillTransparency = 1
 
         
     end
