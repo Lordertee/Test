@@ -1,5 +1,6 @@
 
 print("Devil Hub Alpha loaded!")
+print("Have fun!")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/paygammy/roblox-gpu-saver/release/scripts/GPUSaver.lua"))()
 
 
@@ -63,6 +64,7 @@ VisualSection:NewToggle("ESP", "You will see players through walls.", function(s
         local players = game.Players:GetPlayers()
         
         for i,v in pairs(players) do
+            state = true
             local esp = Instance.new("Highlight")
          esp.Name = v.Name
          esp.FillTransparency = 0
@@ -78,16 +80,18 @@ VisualSection:NewToggle("ESP", "You will see players through walls.", function(s
     else
         print("Toggle Off")
        
-        esp.FillTransparency = 1
-        esp.FillColor = Color3.new(255, 0, 0)
-        esp.OutlineColor = Color3.new(1, 0.333333, 1)
-        esp.OutlineTransparency = 1
+        state = false
        
 
         
     end
 end)
---Credits
+
+
+
+
+
+--Credits(Last Tab)
 CreditsSection:NewLabel("Scripting: Lordertee/CMB")
 CreditsSection:NewLabel("UI: Kavo-UI-Library")
     
