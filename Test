@@ -282,7 +282,6 @@ end)
 
 
 
-
 --Credits(Last Tab)
 CreditsSection:NewLabel("Scripting: Lordertee/CMB")
 CreditsSection:NewLabel("UI: Kavo-UI-Library")
